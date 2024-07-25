@@ -1,14 +1,10 @@
 import { ThemeToggle } from "@/components/theme-toggle";
 import { getStockData } from "@/lib/get-stock-data";
-import { InteractiveStockChart } from "@/components/InteractiveStockChart";
-import { StockSelector } from "@/components/StockSelector";
-import { Suspense } from "react";
 import { companies } from "@/lib/stock-data";
-import { ErrorBoundary } from "react-error-boundary";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { ArrowUpRight, Github, TrendingUp, Twitter } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Github, TrendingUp, Twitter } from "lucide-react";
 import Footer from "@/components/footer";
 import Image from "next/image";
 import Peerlistspotlightlight from "../public/darksvg.svg";
@@ -71,38 +67,25 @@ export default function Home({
         <p className="text-muted-foreground md:text-xl mt-4">
         Enhance your Next.js project with Tailwind CSS<br /> and Shadcn/UI custom components, hooks, and utilities.
         </p>
+        <div className="">
         <Link
           href="#"
           className="inline-flex mt-4 h-10 items-center justify-center rounded-md px-6 bg-black dark:bg-white dark:text-black text-sm font-medium text-primary-foreground shadow hover:bg-dark/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
           prefetch={false}
         >
-          Get Started
+          Get Started <ArrowRight className="ml-2" size={20}/>
         </Link>
+        <Link href="https://demo-getstockify.vercel.app/" className="inline-flex mt-4 h-10 items-center justify-center rounded-md px-6 ml-4 bg-black dark:bg-white dark:text-black text-sm font-medium text-primary-foreground shadow hover:bg-dark/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+          prefetch={false} target="_blank">Live Demo</Link>
+        </div>
       </div>
     </section>
 
-
-
-
-
-      <main className='w-full pt-20 flex flex-col gap-4 mx-auto max-w-screen-lg items-center'>
-        <StockSelector />
-        <ErrorBoundary
-          fallback={
-            <span className='text-sm text-red-600'>
-              Error with Polygon.io API 😅 - Please try again later.
-            </span>
-          }>
-          <Suspense
-            fallback={
-              <span className='justify-self-center self-center text-sm text-white'>
-                Fetching price…
-              </span>
-            }>
-            <InteractiveStockChart chartData={stockData} ticker={ticker} />
-          </Suspense>
-        </ErrorBoundary>
-      </main>
+    <div className="flex justify-center">
+    <video autoPlay loop style={{ width: '980px', height: '470px' }} className="shadow-lg shadow-black rounded-lg dark:shadow-white">
+        <source src="/demo.mp4" />
+    </video>
+    </div>
       <TechnologyDisplay />
       <FeaturesSectionDemo />
       <Footer />
