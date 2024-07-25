@@ -7,23 +7,24 @@ import createGlobe from "cobe";
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import githubcode from "../public/githubcode.png";
 
 export function FeaturesSectionDemo() {
   const features = [
     {
-      title: "Track issues effectively",
+      title: "Our Latest Stock Graphs",
       description:
-        "Track and manage your project issues with ease using our intuitive interface.",
+        "Stay tuned, more stock graphs are on their way!",
       skeleton: <SkeletonOne />,
       className:
-        "col-span-1 lg:col-span-4 border-b lg:border-r dark:border-neutral-800 font-medium bg-black",
+        "col-span-1 lg:col-span-4 border-b lg:border-r dark:border-neutral-800 font-medium bg-white dark:bg-black",
     },
     {
       title: "Capture pictures with AI",
       description:
         "Capture stunning photos effortlessly using our advanced AI technology.",
       skeleton: <SkeletonTwo />,
-      className: "border-b col-span-1 lg:col-span-2 dark:border-neutral-800 font-medium bg-black",
+      className: "border-b col-span-1 lg:col-span-2 dark:border-neutral-800 font-medium bg-white dark:bg-black",
     },
     {
       title: "We are Open Source",
@@ -31,14 +32,14 @@ export function FeaturesSectionDemo() {
         "We're open-source, welcoming contributions on GitHub and in our community forums.",
       skeleton: <SkeletonThree />,
       className:
-        "col-span-1 lg:col-span-3 lg:border-r  dark:border-neutral-800 font-medium bg-black",
+        "col-span-1 lg:col-span-3 lg:border-r  dark:border-neutral-800 font-medium bg-white dark:bg-black",
     },
     {
       title: "Deploy in seconds",
       description:
         "Deploy your model in seconds with our cutting-edge cloud services, designed to meet your needs swiftly and efficiently.",
       skeleton: <SkeletonFour />,
-      className: "col-span-1 lg:col-span-3 border-b lg:border-none font-medium bg-black",
+      className: "col-span-1 lg:col-span-3 border-b lg:border-none font-medium bg-white dark:bg-black",
     },
   ];
   return (
@@ -106,22 +107,13 @@ const FeatureDescription = ({ children }: { children?: React.ReactNode }) => {
 
 export const SkeletonOne = () => {
   return (
-    <div className="relative flex px-2 gap-10 h-full mb-[-200px]">
-      <div className="w-full  p-5  mx-auto bg-white dark:bg-neutral-900 shadow-2xl group h-full">
-        <div className="flex flex-1 w-full h-full flex-col space-y-2  ">
-          {/* TODO */}
-          <Image
-            src="/linear.webp"
-            alt="header"
-            width={800}
-            height={1000}
-            className="h-full w-full aspect-square object-cover object-left-top rounded-sm"
-          />
-        </div>
+    <div className="relative flex px-2 gap-10 h-full md:mb-[-200px]">
+      <div className="w-full  p-5  mx-auto text-center  px-[100px] mt-[100px] group h-full">
+        <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">Coming Soon</h1>
+        <p className="mt-4 text-muted-foreground">
+          We're working hard to bring you something amazing. Stay tuned for updates!
+        </p>
       </div>
-
-      <div className="absolute bottom-0 z-40 inset-x-0 h-60 bg-gradient-to-t from-white dark:from-black via-white dark:via-black to-transparent w-full pointer-events-none" />
-      <div className="absolute top-0 z-40 inset-x-0 h-60 bg-gradient-to-b from-white dark:from-black via-transparent to-transparent w-full pointer-events-none" />
     </div>
   );
 };
@@ -129,14 +121,14 @@ export const SkeletonOne = () => {
 export const SkeletonThree = () => {
   return (
     <Link
-      href="https://www.youtube.com/watch?v=RPa3_AD1_Vs"
+      href="https://github.com/Vineetjassal/Stockify"
       target="__blank"
       className="relative flex gap-10 h-full mb-[-200px] group/image"
     >
       <div className="w-full mx-auto bg-transparent dark:bg-transparent group h-full">
         <div className="flex flex-1 w-full h-full flex-col space-y-2  relative">
           <Image
-            src="https://assets.aceternity.com/fireship.jpg"
+            src={githubcode}
             alt="header"
             width={1300}
             height={500}
