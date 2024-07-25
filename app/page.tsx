@@ -81,7 +81,7 @@ export default function Home({
       </div>
     </section>
 
-    <div className="flex justify-center">
+    <div className="hidden md:flex justify-center">
     <video autoPlay loop style={{ width: '980px', height: '470px' }} className="shadow-lg shadow-black rounded-lg dark:shadow-white">
         <source src="/demo.mp4" />
     </video>
