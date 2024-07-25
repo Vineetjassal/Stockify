@@ -108,7 +108,7 @@ const FeatureDescription = ({ children }: { children?: React.ReactNode }) => {
 export const SkeletonOne = () => {
   return (
     <div className="relative flex px-2 gap-10 h-full md:mb-[-200px]">
-      <div className="w-full  p-5  mx-auto text-center  px-[100px] mt-[100px] group h-full">
+      <div className="w-full  p-5  mx-auto text-center px-6  md:px-[100px] mt-[100px] group h-full">
         <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">Coming Soon</h1>
         <p className="mt-4 text-muted-foreground">
           We're working hard to bring you something amazing. Stay tuned for updates!
